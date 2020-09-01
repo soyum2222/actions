@@ -14,8 +14,8 @@ jobs:
 
       - name: build-go
         run: |
-         go get -u
-         go build main.go
+          go env -w GO111MODULE=on
+          go build main.go
       - name: issue
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
