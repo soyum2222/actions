@@ -6,7 +6,6 @@ import (
 	"github.com/dyweb/gommon/util/httputil"
 	"github.com/google/go-github/v29/github"
 	"golang.org/x/oauth2"
-	"io/ioutil"
 	"os"
 )
 
@@ -37,15 +36,13 @@ func main() {
 		Body:      &body,
 	}
 
-	issue, resp, err := client.Issues.Create(context.Background(), "soyum2222", "actions", req)
+	issue, _, err := client.Issues.Create(context.Background(), "soyum2222", "actions", req)
 	if err != nil {
 		fmt.Println(err)
 	}
-	body1, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(string(body1))
 	fmt.Println("Created new issue %d %s", issue.GetNumber(), issue.GetTitle())
 
 }
