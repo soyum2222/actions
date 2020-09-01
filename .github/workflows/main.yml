@@ -1,0 +1,22 @@
+
+name: auto_issues
+
+
+on:
+  schedule:
+  - cron: "* * * * 1-5"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build-go
+        run: go build -o auto_issues main.go
+
+      - name: issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: ./main
