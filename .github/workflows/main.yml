@@ -1,8 +1,8 @@
-name: auto_issues
+name: auto_create
 
 on:
   schedule:
-  - cron: "* * * * 1-5"
+  - cron: "30 * * * 1-5"
 
 jobs:
   build:
