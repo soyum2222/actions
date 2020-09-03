@@ -34,7 +34,7 @@ func main() {
 	var cfg string
 
 	flag.StringVar(&cfg,"cfg","","")
-
+	flag.Parse()
 
 	data ,err:=ioutil.ReadFile(cfg)
 	if err!=nil{
