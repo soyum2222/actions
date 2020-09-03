@@ -33,7 +33,7 @@ func main() {
 
 	var cfg string
 
-	flag.StringVar(&cfg,"cfg","","")
+	flag.StringVar(&cfg,"c","","")
 	flag.Parse()
 
 	data ,err:=ioutil.ReadFile(cfg)
