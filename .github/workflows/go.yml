@@ -18,4 +18,4 @@ jobs:
       - name: create-issue
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        run: cd actions &&./main -c issuesinfo.json
+        run: cd actions &&./main -c ./issuesinfo.json
